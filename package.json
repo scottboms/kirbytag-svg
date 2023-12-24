@@ -1,0 +1,8 @@
+{
+  "name": "svg",
+  "description": "Custom Kirbytag to enable using svg directly in textareas",
+  "author": "Scott Boms <scottboms@gmail.com>",
+  "version": "1.0.0",
+  "type": "kirby-plugin",
+  "license": "GNU GPLv3"
+}
