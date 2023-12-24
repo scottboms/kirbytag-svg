@@ -10,7 +10,7 @@ Download and copy this repository to `/site/plugins/kirbytag-svg`.
 
 ### Usage
 
-(svg: yourfile.svg)
+`(svg: yourfile.svg)`
 
 ## Compatibility
 
