@@ -2,7 +2,7 @@
     "name": "scottboms/kirbytag-svg",
     "description": "SVG Kirbytag Plugin",
     "type": "kirby-plugin",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "homepage": "https://github.com/scottboms/kirbytag-svg",
     "license": "GNU GPLv3",
     "authors": [
