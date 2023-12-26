@@ -5,11 +5,11 @@
 /**
  * Kirby SVG KirbyTag
  *
- * @version 1.0.1
+ * @version 1.0.2
  * @author Scott Boms <plugins@scottboms.com>
  * @copyright Scott Boms <plugins@scottboms.com>
  * @link https://github.com/scottboms/kirbytag-svg
- * @license GNU GPLv3
+ * @license MIT
 **/
 
 Kirby::plugin('scottboms/kirbytag-svg', [
