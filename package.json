@@ -4,5 +4,5 @@
   "author": "Scott Boms <scottboms@gmail.com>",
   "version": "1.0.1",
   "type": "kirby-plugin",
-  "license": "GNU GPLv3"
+  "license": "MIT"
 }

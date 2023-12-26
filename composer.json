@@ -1,10 +1,10 @@
 {
     "name": "scottboms/kirbytag-svg",
-    "description": "SVG Kirbytag Plugin",
+    "description": "Kirbytag SVG Plugin",
     "type": "kirby-plugin",
     "version": "1.0.1",
     "homepage": "https://github.com/scottboms/kirbytag-svg",
-    "license": "GNU GPLv3",
+    "license": "MIT",
     "authors": [
         {
             "name": "Scott Boms",
