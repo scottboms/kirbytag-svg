@@ -5,7 +5,7 @@
 /**
  * Kirby SVG KirbyTag
  *
- * @version 1.0.2
+ * @version 1.0.4
  * @author Scott Boms <plugins@scottboms.com>
  * @copyright Scott Boms <plugins@scottboms.com>
  * @link https://github.com/scottboms/kirbytag-svg
