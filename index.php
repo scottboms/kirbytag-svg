@@ -27,16 +27,23 @@ Kirby::plugin('scottboms/kirbytag-svg', [
         'role'
       ],
       'html' => function($tag) {
+        $pattern = '/\//'; // identify path strings
 
-        $file = $tag->parent()->file($tag->value);
-        $fileurl = $file ? $file->url() : '';
+        $string = $tag->value;
+
+        if (preg_match($pattern, $string)) {
+          $file = $tag->svg;
+        } else {
+          $file = $tag->parent()->file($tag->value);          
+        }
+
+        $svgurl = $file;
         $wrapper = $tag->wrapper;
         $class = $tag->class;
         $role = $tag->role;
 
         $args = array(
-          'svg' => $file,
-          'svgurl' => $fileurl,
+          'svg' => $svgurl,
           'wrapper' => $wrapper,
           'class' => $class,
           'role' => $role
