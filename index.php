@@ -5,14 +5,20 @@
 /**
  * Kirby SVG KirbyTag
  *
- * @version 1.0.4
+ * @version 1.1.0
  * @author Scott Boms <plugins@scottboms.com>
  * @copyright Scott Boms <plugins@scottboms.com>
  * @link https://github.com/scottboms/kirbytag-svg
  * @license MIT
 **/
 
+use Kirby\Cms\File;
+use Kirby\Toolkit\F;
+
 Kirby::plugin('scottboms/kirbytag-svg', [
+  'snippets' => [
+    'svgtag' => __DIR__ . '/snippets/svg.php'
+  ],
   'tags' => [
     'svg' => [
       'attr' => [
@@ -21,26 +27,25 @@ Kirby::plugin('scottboms/kirbytag-svg', [
         'role'
       ],
       'html' => function($tag) {
-        $html = '';
-        // Variables to hold tag options
-        $svg_url = $tag->svg;
+
+        $file = $tag->parent()->file($tag->value);
+        $fileurl = $file ? $file->url() : '';
         $wrapper = $tag->wrapper;
         $class = $tag->class;
         $role = $tag->role;
 
-        if($wrapper == '') {
-          // If no wrapper attribute is found, output the SVG without a
-          // wrapper element and ignore associated options if present
-          $html .= svg($svg_url);
-        } else {
-          // If a wrapper option has been specified, prepend the svg element
-          // with that element and its associated class and role options
-          $html .= '<' . $wrapper . ' class="' . $class . '" role="' . $role . '">';
-          $html .= svg($svg_url);
-          $html .= '</' . $wrapper . '>';
-        }
+        $args = array(
+          'svg' => $file,
+          'svgurl' => $fileurl,
+          'wrapper' => $wrapper,
+          'class' => $class,
+          'role' => $role
+        );
 
-        return $html;
+        $snippet = 'svgtag';
+        $svg = snippet($snippet, $args, true);
+
+        return $svg;
       }
     ]
   ]
