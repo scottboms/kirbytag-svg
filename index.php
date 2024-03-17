@@ -5,7 +5,7 @@
 /**
  * Kirby SVG KirbyTag
  *
- * @version 1.1.0
+ * @version 1.1.1
  * @author Scott Boms <plugins@scottboms.com>
  * @copyright Scott Boms <plugins@scottboms.com>
  * @link https://github.com/scottboms/kirbytag-svg
@@ -18,6 +18,9 @@ use Kirby\Toolkit\F;
 Kirby::plugin('scottboms/kirbytag-svg', [
   'snippets' => [
     'svgtag' => __DIR__ . '/snippets/svg.php'
+  ],
+  'options' => [
+    'wrapper' => 'figure'
   ],
   'tags' => [
     'svg' => [
@@ -38,7 +41,7 @@ Kirby::plugin('scottboms/kirbytag-svg', [
         }
 
         $svgurl = $file;
-        $wrapper = $tag->wrapper;
+        $wrapper = $tag->wrapper ?? option('scottboms.kirbytag-svg.wrapper');
         $class = $tag->class;
         $role = $tag->role;
 
@@ -46,7 +49,8 @@ Kirby::plugin('scottboms/kirbytag-svg', [
           'svg' => $svgurl,
           'wrapper' => $wrapper,
           'class' => $class,
-          'role' => $role
+          'role' => $role,
+          'string' => $string
         );
 
         $snippet = 'svgtag';

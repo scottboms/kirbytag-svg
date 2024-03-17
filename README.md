@@ -1,22 +1,36 @@
 # SVG Kirbytag
 
-A kirbytag for processing SVGs within kirbytags and outputting inline SVG code.
+A kirbytag for outputting SVG images inline with a number of customizable attributes.
+
+## Requirements
+
+- [**Kirby**](https://getkirby.com/)
+
+## Compatibility
+
+* Kirby 3.5+
+* Kirby 4+
 
 ## Installation
 
-### Download
+### [Kirby CLI](https://github.com/getkirby/cli)
 
-Download and copy this repository to `/site/plugins/kirbytag-svg`.
+    kirby plugin:install scottboms/kirbytag-svg
 
-### Git submodule
+### Git Submodule
 
-	git submodule add https://github.com/scottboms/kirbytag-svg.git site/plugins/kirbytag-svg
+    $ git submodule add https://github.com/scottboms/kirbytag-svg.git site/plugins/kirbytag-svg
+
+### Copy and Paste
+
+1. [Download](https://github.com/scottboms/kirbytag-svg/archive/master.zip) the contents of this repository as a Zip file.
+2. Rename the extracted folder to `kirbytag-svg` and copy it into the `site/plugins/` directory in your Kirby project.
 
 ## Usage
 
 `(svg: yourfile.svg)`
 
-Optionally, you can specify an element to wrap the SVG along with class and role attributes that will be applied to that element. If `class` or `role` attributes are included but no `wrapper` element, these will be ignored.
+Optionally, you can specify a custom `wrapper` element to wrap the SVG along with class and role attributes that will be applied to that element. If `class` or `role` attributes are included but no `wrapper` element, a 'figure' element will be used.
 
 ### Optional Tag Attributes
 
@@ -24,12 +38,17 @@ Optionally, you can specify an element to wrap the SVG along with class and role
 * `class`: A CSS class/classes to append to the wrapper element [optional]
 * `role`: A role attribute appended to the wrapper element [optional]
 
-Example usage: `(svg: yourfile.svg wrapper: figure class: svg role: img)` 
+#### Example usage: 
 
-## Compatibility
+    (svg: /img/deke.svg)
+    (svg: lerxst.svg wrapper: figure class: svg role: img)
+    (svg: /assets/icons/pratt.svg wrapper: div class: icon)
 
-* Kirby 3.5+
-* Kirby 4+
+## Configuration Options
+
+You can add a default wrapper element to SVGs using the provided config option that can be added to your `config.php` file as shown.
+
+    'scottboms.kirbytag-svg.wrapper' => 'div',
 
 ## Disclaimer
 
