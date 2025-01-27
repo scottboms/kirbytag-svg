@@ -10,15 +10,22 @@
  * @license MIT
 **/
 
+use Composer\Semver\Semver;
+use Kirby\Cms\App as Kirby;
 use Kirby\Cms\File;
 use Kirby\Toolkit\F;
+
+// validate Kirby version
+if (Semver::satisfies(Kirby::version() ?? '0.0.0', '~4.0 || ~5.0') === false) {
+	throw new Exception('SVG Tag requires Kirby 4 or 5');
+}
 
 Kirby::plugin(
   name: 'scottboms/kirbytag-svg', 
   info: [
     'homepage' => 'https://github.com/scottboms/kirbytag-svg'
   ],
-  version: '1.1.2',
+  version: '1.1.3',
   extends: [
     'snippets' => [
       'svgtag' => __DIR__ . '/snippets/svg.php'
