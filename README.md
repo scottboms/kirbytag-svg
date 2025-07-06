@@ -1,25 +1,26 @@
 # SVG Kirbytag
 
+![Plugin Preview](src/assets/svg-tag-plugin.jpg)
+
 A kirbytag for outputting SVG images inline with a number of customizable attributes.
 
 ## Requirements
 
 - [**Kirby**](https://getkirby.com/)
 
-## Compatibility
-
-* Kirby 3.5+
-* Kirby 4+
-
 ## Installation
 
 ### [Kirby CLI](https://github.com/getkirby/cli)
 
-    kirby plugin:install scottboms/kirbytag-svg
+```
+kirby plugin:install scottboms/kirbytag-svg
+```
 
 ### Git Submodule
 
-    $ git submodule add https://github.com/scottboms/kirbytag-svg.git site/plugins/kirbytag-svg
+```
+$ git submodule add https://github.com/scottboms/kirbytag-svg.git site/plugins/kirbytag-svg
+```
 
 ### Copy and Paste
 
@@ -40,15 +41,28 @@ Optionally, you can specify a custom `wrapper` element to wrap the SVG along wit
 
 #### Example usage: 
 
-    (svg: /img/deke.svg)
-    (svg: lerxst.svg wrapper: figure class: svg role: img)
-    (svg: /assets/icons/pratt.svg wrapper: div class: icon)
+```
+(svg: /img/deke.svg)
+(svg: lerxst.svg wrapper: figure class: svg role: img)
+(svg: /assets/icons/pratt.svg wrapper: div class: icon)
+```
 
 ## Configuration Options
 
 You can add a default wrapper element to SVGs using the provided config option that can be added to your `config.php` file as shown.
 
-    'scottboms.kirbytag-svg.wrapper' => 'div',
+```php
+<?php
+	return [
+		'scottboms.kirbytag-svg.wrapper' => 'div',
+	]
+```
+
+## Compatibility
+
+* Kirby 3.5+
+* Kirby 4.x
+* Kirby 5.x
 
 ## Disclaimer
 
@@ -59,15 +73,3 @@ This plugin is provided "as is" with no guarantee. Use it at your own risk and a
 [MIT](https://opensource.org/licenses/MIT)
 
 You are prohibited from using this plugin in any project that promotes racism, sexism, homophobia, animal abuse, violence or any other form of hate speech.
-
-
-
-
-
-
-
-
-
-## License
-
-MIT
