@@ -16,14 +16,14 @@ use Kirby\Toolkit\F;
 
 // shamelessly borrowed from distantnative/retour-for-kirby
 if (
-	version_compare(App::version() ?? '0.0.0', '4.0.1', '<') === true ||
-	version_compare(App::version() ?? '0.0.0', '6.0.0', '>=') === true
+	version_compare(App::version() ?? '0.0.0', '5.0.0', '<') === true ||
+	version_compare(App::version() ?? '6.0.0', '7.0.0', '>=') === true
 ) {
-	throw new Exception('SVG Kirbytag requires Kirby v4 or v5');
+	throw new Exception('SVG Kirbytag requires Kirby v6 or v7');
 }
 
 Kirby::plugin(
-  name: 'scottboms/kirbytag-svg', 
+  name: 'scottboms/kirbytag-svg',
   info: [
     'homepage' => 'https://github.com/scottboms/kirbytag-svg'
   ],
@@ -50,7 +50,7 @@ Kirby::plugin(
           if (preg_match($pattern, $string)) {
             $file = $tag->svg;
           } else {
-            $file = $tag->parent()->file($tag->value);          
+            $file = $tag->parent()->file($tag->value);
           }
 
           $svgurl = $file;
