@@ -1,18 +1,18 @@
 {
-    "name": "scottboms/kirbytag-svg",
-    "description": "Kirbytag SVG Plugin",
-    "type": "kirby-plugin",
-    "homepage": "https://github.com/scottboms/kirbytag-svg",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Scott Boms",
-            "email": "plugins@scottboms.com"
-        }
-    ],
-    "require": {
-      "php": ">8.1.0 <8.4.0",
-      "getkirby/cms": "^4.0 || ^5.0",
-      "getkirby/composer-installer": "^1.1"
+  "name": "scottboms/kirbytag-svg",
+  "description": "Kirbytag SVG Plugin",
+  "type": "kirby-plugin",
+  "homepage": "https://github.com/scottboms/kirbytag-svg",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Scott Boms",
+      "email": "plugins@scottboms.com"
     }
+  ],
+  "require": {
+    "php": ">8.2.0",
+    "getkirby/cms": "^4.0",
+    "getkirby/composer-installer": "^1.1"
+  }
 }

@@ -39,7 +39,7 @@ Optionally, you can specify a custom `wrapper` element to wrap the SVG along wit
 * `class`: A CSS class/classes to append to the wrapper element [optional]
 * `role`: A role attribute appended to the wrapper element [optional]
 
-#### Example usage: 
+#### Example usage:
 
 ```
 (svg: /img/deke.svg)
@@ -60,9 +60,8 @@ You can add a default wrapper element to SVGs using the provided config option t
 
 ## Compatibility
 
-* Kirby 3.5+
-* Kirby 4.x
-* Kirby 5.x
+* Kirby 3.5+, 4.x, 5.x (use version 1.x)
+* Kirby 6.x (use version 6.x)
 
 ## Disclaimer
 
