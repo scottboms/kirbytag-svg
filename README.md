@@ -33,18 +33,27 @@ $ git submodule add https://github.com/scottboms/kirbytag-svg.git site/plugins/k
 
 Optionally, you can specify a custom `wrapper` element to wrap the SVG along with class and role attributes that will be applied to that element. If `class` or `role` attributes are included but no `wrapper` element, a 'figure' element will be used.
 
+The tag now supports all of these value types while preserving the existing path-based behavior:
+
+* page-local filenames, like `icon.svg`
+* Kirby file IDs/paths, like `projects/example/icon.svg`
+* Kirby file UUIDs, like `file://abc123...`
+* existing root-relative or filesystem-style SVG paths, like `/assets/icons/icon.svg`
+
 ### Optional Tag Attributes
 
 * `wrapper`: A wrapper element to surround the SVG when output in your template [optional]
 * `class`: A CSS class/classes to append to the wrapper element [optional]
 * `role`: A role attribute appended to the wrapper element [optional]
 
-#### Example usage: 
+#### Example usage:
 
 ```
 (svg: /img/deke.svg)
 (svg: lerxst.svg wrapper: figure class: svg role: img)
 (svg: /assets/icons/pratt.svg wrapper: div class: icon)
+(svg: projects/example/logo.svg)
+(svg: file://your-file-uuid)
 ```
 
 ## Configuration Options

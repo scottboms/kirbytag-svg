@@ -12,7 +12,6 @@
 
 use Kirby\Cms\App;
 use Kirby\Cms\File;
-use Kirby\Toolkit\F;
 
 // shamelessly borrowed from distantnative/retour-for-kirby
 if (
@@ -23,11 +22,11 @@ if (
 }
 
 Kirby::plugin(
-  name: 'scottboms/kirbytag-svg', 
+  name: 'scottboms/kirbytag-svg',
   info: [
     'homepage' => 'https://github.com/scottboms/kirbytag-svg'
   ],
-  version: '1.1.4',
+  version: '1.1.5',
   extends: [
     'snippets' => [
       'svgtag' => __DIR__ . '/snippets/svg.php'
@@ -43,23 +42,14 @@ Kirby::plugin(
           'role'
         ],
         'html' => function($tag) {
-          $pattern = '/\//'; // identify path strings
-
           $string = $tag->value;
-
-          if (preg_match($pattern, $string)) {
-            $file = $tag->svg;
-          } else {
-            $file = $tag->parent()->file($tag->value);          
-          }
-
-          $svgurl = $file;
+          $svg = $tag->file($string) ?? $string;
           $wrapper = $tag->wrapper ?? option('scottboms.kirbytag-svg.wrapper');
           $class = $tag->class;
           $role = $tag->role;
 
           $args = array(
-            'svg' => $svgurl,
+            'svg' => $svg,
             'wrapper' => $wrapper,
             'class' => $class,
             'role' => $role,
