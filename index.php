@@ -13,12 +13,12 @@
 use Kirby\Cms\App;
 use Kirby\Cms\File;
 
-// shamelessly borrowed from distantnative/retour-for-kirby
+$version = App::version() ?? '0.0.0';
 if (
-	version_compare(App::version() ?? '0.0.0', '6.0.0', '<') === true ||
-	version_compare(App::version() ?? '0.0.0', '7.0.0', '>=') === true
+    version_compare($version, '6.0.0-beta.1', '<') ||
+    version_compare($version, '7.0.0', '>=')
 ) {
-	throw new Exception('SVG Kirbytag requires Kirby v6');
+    throw new Exception('Kirbytag SVG requires Kirby 6');
 }
 
 Kirby::plugin(
