@@ -15,10 +15,10 @@ use Kirby\Cms\File;
 
 // shamelessly borrowed from distantnative/retour-for-kirby
 if (
-	version_compare(App::version() ?? '0.0.0', '4.0.1', '<') === true ||
-	version_compare(App::version() ?? '0.0.0', '6.0.0', '>=') === true
+	version_compare(App::version() ?? '0.0.0', '6.0.0', '<') === true ||
+	version_compare(App::version() ?? '0.0.0', '7.0.0', '>=') === true
 ) {
-	throw new Exception('SVG Kirbytag requires Kirby v4 or v5');
+	throw new Exception('SVG Kirbytag requires Kirby v6');
 }
 
 Kirby::plugin(
@@ -26,7 +26,7 @@ Kirby::plugin(
   info: [
     'homepage' => 'https://github.com/scottboms/kirbytag-svg'
   ],
-  version: '1.1.5',
+  version: '6.0.0',
   extends: [
     'snippets' => [
       'svgtag' => __DIR__ . '/snippets/svg.php'

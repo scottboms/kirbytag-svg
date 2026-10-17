@@ -69,9 +69,7 @@ You can add a default wrapper element to SVGs using the provided config option t
 
 ## Compatibility
 
-* Kirby 3.5+
-* Kirby 4.x
-* Kirby 5.x
+* Kirby 6.x
 
 ## Disclaimer
 
