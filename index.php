@@ -26,7 +26,7 @@ Kirby::plugin(
   info: [
     'homepage' => 'https://github.com/scottboms/kirbytag-svg'
   ],
-  version: '1.1.5',
+  version: '1.1.6',
   extends: [
     'snippets' => [
       'svgtag' => __DIR__ . '/snippets/svg.php'
