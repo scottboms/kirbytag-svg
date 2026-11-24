@@ -15,7 +15,7 @@ use Kirby\Cms\File;
 
 $version = App::version() ?? '0.0.0';
 if (
-    version_compare($version, '6.0.0-beta.1', '<') ||
+    version_compare($version, '6.0.0', '<') ||
     version_compare($version, '7.0.0', '>=')
 ) {
     throw new Exception('Kirbytag SVG requires Kirby 6');
